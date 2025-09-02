@@ -39,15 +39,11 @@ def get_company_overview(symbol):
 
 
 def search_symbols(query):
-    """
-    Simulate autocomplete by checking tickers.
-    NOTE: yfinance does not provide direct search API like Alpha Vantage.
-    You can maintain a local list of popular tickers, or use a 3rd party library.
-    """
+   
     suggestions = []
     query = query.lower()
 
-    # Example static dictionary (expand with your own)
+    
     popular_stocks = {
         "AAPL": "Apple Inc.",
         "MSFT": "Microsoft Corporation",
