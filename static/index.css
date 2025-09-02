@@ -1,0 +1,295 @@
+/* General */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+ 
+}
+
+/* Header */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: 20px;
+  height: 100px;
+  position: relative;
+  z-index: 1000;
+}
+
+.title-pill {
+  background-color: white;
+  border: 4px solid #6fe3e3;
+  border-radius: 40px;
+  padding: 20px 60px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.circle-icon {
+  height: 80px;
+  border: 3px solid #00ffcc;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+}
+
+.left-icon {
+  width: 120px;
+  border-radius: 0 40px 40px 0;
+}
+
+.right-icon {
+  width: 80px;
+  border-radius: 50%;
+  z-index: 1001;
+}
+
+.right-icon img {
+  width: 100%;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+/* Section */
+.section {
+  margin: 10px 0;
+  background-color: #dcdcdc;
+  height: 350px;
+  padding: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.section-label {
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* Hamburger */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 6px;
+  padding-left: 10px;
+  height: 40px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+/* Search Section */
+.search-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 450px;
+  z-index: 1;
+}
+
+.search-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.search-form {
+  display: flex;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+}
+
+#search-input {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  border: 2px solid #6fe3e3;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.search-form button {
+  padding: 15px 25px;
+  font-size: 18px;
+  border: none;
+  background-color: #6fe3e3;
+  color: white;
+  font-weight: bold;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background-color: #4fcaca;
+}
+
+/* Suggestions dropdown */
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: calc(100% - 120px);
+  background: white;
+  border: 1px solid #ddd;
+  border-top: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.suggestions li {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.suggestions li:hover {
+  background: #f0f0f0;
+}
+
+/* Sidebar (offcanvas) */
+.offcanvas {
+  background-color: #ffffff;
+  width: 250px;
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid #ddd;
+}
+
+.offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 15px;
+}
+
+.offcanvas-body h6 {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 15px 0 5px 0;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Sidebar buttons */
+.sidebar-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff !important;
+  background: #6fe3e3;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.sidebar-btn:hover {
+  background-color: #4fcaca;
+  transform: translateY(-2px);
+}
+
+.sidebar-btn:active {
+  background-color: #3aa8a8;
+  transform: translateY(0);
+}
+
+/* Profile Page Styling */
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6fe3e3, #4fcaca);
+  padding: 20px;
+}
+
+.profile-card {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  width: 100%;
+}
+
+.profile-card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 28px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.form-group input {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #6fe3e3;
+  outline: none;
+}
+
+.save-btn {
+  width: 100%;
+  background: #6fe3e3;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+.save-btn:hover {
+  background: #4fcaca;
+  transform: translateY(-2px);
+}
+
+.save-btn:active {
+  transform: translateY(0);
+}

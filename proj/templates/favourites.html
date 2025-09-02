@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Favourites</title>
+  <link rel="stylesheet" href="{% static 'favourites.css' %}">
+</head>
+<body>
+  <div class="fav-container">
+    <h1>My Favourite Stocks</h1>
+
+    {% if stocks %}
+      <ul class="fav-list">
+        {% for stock in stocks %}
+          <li>
+            <strong>{{ stock.symbol }}</strong> - ${{ stock.price|floatformat:2 }}
+            <a href="{% url 'remove_from_favourites' stock.symbol %}" class="remove-link">❌ Remove</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>You have no favourite stocks yet.</p>
+    {% endif %}
+  </div>
+</body>
+</html>

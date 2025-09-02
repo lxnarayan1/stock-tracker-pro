@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ stock.symbol }} - Stock Details</title>
+    <link rel="stylesheet" href="{% static 'stock_info.css' %}" />
+  </head>
+  <body>
+    <div class="stock-container">
+      {% if error %}
+      <p class="error">{{ error }}</p>
+      {% else %}
+      <div class="stock-header">
+        <h1>{{ company.name }} ({{ stock.symbol }})</h1>
+        <div class="stock-price">
+          Price: {{ stock.currency }}{{ stock.price|floatformat:2 }}
+        </div>
+      </div>
+
+      <div class="stock-details">
+        <div class="detail-card">
+          <strong>Sector</strong>
+          {{ company.sector }}
+        </div>
+
+        {% if user.is_authenticated %}
+        <a href="{% url 'add_to_favourites' stock.symbol %}" class="fav-link"
+          >⭐ Add to Favourites</a
+        >
+        {% else %}
+        <p><a href="{% url 'login' %}">Login</a> to add favourites.</p>
+        {% endif %}
+
+        <div class="detail-card">
+          <strong>Industry</strong>
+          {{ company.industry }}
+        </div>
+        <div class="detail-card">
+          <strong>Market Cap</strong>
+          {{ company.market_cap }}
+        </div>
+        <div class="detail-card">
+          <strong>Volume</strong>
+          {{ stock.volume }}
+        </div>
+        <div class="detail-card">
+          <strong>Last Trading Day</strong>
+          {{ stock.last_trading_day }}
+        </div>
+      </div>
+
+      <div class="stock-description">
+        <h3>About Company</h3>
+        <p>{{ company.description }}</p>
+      </div>
+      {% endif %}
+
+      <a href="{% url 'home' %}" class="back-link">← Back to Search</a>
+    </div>
+  </body>
+</html>
